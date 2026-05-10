@@ -1,4 +1,53 @@
+const translations = {
+  en: {
+    hero_title:
+      'Inspiring Learning, <span class="text-blue-600">Nurturing Growth</span>',
+    hero_desc:
+      '<span class="text-blue-600 font-semibold">Kaixo! Hola! Hello!</span> I\'m Ana, a dedicated educator with over 10 years of experience in Spain and the UK, specializing in multilingual development and nurturing care.',
+    contact_btn: "Get in touch",
+    learn_more_btn: "Learn More",
+    about_me_title: "About Me",
+    about_me_desc: "",
+  },
+  es: {
+    hero_title:
+      'Inspirando Aprendizaje, <span class="text-blue-600">Fomentando el Crecimiento</span>',
+    hero_desc:
+      '<span class="text-blue-600 font-semibold">¡Hola!</span> Soy Ana, una educadora dedicada...',
+    contact_btn: "Contactar",
+    learn_more_btn: "Aprender Más",
+    about_me_title: "",
+    about_me_desc: "",
+  },
+  eu: {
+    hero_title:
+      'Ikaskuntza Inspiratzen, <span class="text-blue-600">Hazkundea Elikatzen</span>',
+    hero_desc:
+      '<span class="text-blue-600 font-semibold">Kaixo!</span> Ana naiz, hezitzaile kementsua...',
+    contact_btn: "Jarri harremanetan",
+    learn_more_btn: "Ikasi gehiago",
+    about_me_title: "",
+    about_me_desc: "",
+  },
+};
+
+// function setLanguage(lang) {
+//   // Find elements with the data-i18n attribute
+//   document.querySelectorAll("[data-i18n]").forEach((element) => {
+//     const key = element.getAttribute("data-i18n");
+//     element.innerHTML = translations[lang][key];
+//   });
+
+//   // Save choice to local storage for preferences
+//   localStorage.setItem("preferredLanguage", lang);
+// }
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Translation
+  // On Page Load: Check for saved language or default to English
+  // const savedLang = localStorage.getItem("preferredLanguage") || "en";
+  // setLanguage(savedLang);
+
   // Image Array Configuration
   const aboutImages = [
     "assets/images/01.jpg",

@@ -69,42 +69,67 @@
         <img
           src="assets/images/15.jpg"
           alt="Background"
-          class="w-full h-full object-cover opacity-15"
+          class="w-full h-full object-cover opacity-20"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-purple-600/30"
+          class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"
         ></div>
       </div>
 
       <div class="container mx-auto px-6 relative z-10 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <!-- Title -->
+        <h1
+          class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-slate-800"
+          data-i18n="hero_title"
+        >
           Inspiring Learning, <br class="hidden md:block" />
-          Nurturing Growth
+          <span class="text-blue-600">Nurturing Growth</span>
         </h1>
-        <!-- <p class="text-lg md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
-          Professional educator & developmental care dedicated to helping
-          children reach their full potential.
-        </p> -->
-        <p class="text-lg md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
-          <strong>Kaixo! Hola! Hello!</strong> I'm Ana, a dedicated educator
-          with over 10 years of experience in Spain and the UK, specializing in
-          multilingual development and nurturing care.
+
+        <!-- Introduction -->
+        <p
+          class="text-lg md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed"
+          data-i18n="hero_desc"
+        >
+          <span class="text-blue-600 font-semibold">Kaixo! Hola! Hello!</span>
+          I'm Ana, a dedicated educator with over 10 years of experience in
+          Spain and the UK, specializing in multilingual development and
+          nurturing care.
         </p>
+
+        <!-- Buttons -->
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
             href="#contact"
-            class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 transition shadow-lg"
+            class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-semibold inline-flex items-center justify-center gap-2 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            data-i18n="contact_btn"
           >
             <i data-lucide="mail" class="w-5 h-5"></i> Get in touch
           </a>
+
           <a
             href="#about"
-            class="w-full sm:w-auto border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold text-center transition"
-            >Learn More</a
+            class="w-full sm:w-auto border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-semibold text-center transition"
+            data-i18n="learn_more_btn"
           >
+            Learn More
+          </a>
         </div>
+
+        <!-- Language Switcher -->
+        <!-- <div class="flex gap-3 text-xs font-semibold justify-center mt-6">
+          <button onclick="setLanguage('en')" class="hover:text-blue-600">
+            EN
+          </button>
+          <button onclick="setLanguage('es')" class="hover:text-blue-600">
+            ES
+          </button>
+          <button onclick="setLanguage('eu')" class="hover:text-blue-600">
+            EU
+          </button>
+        </div> -->
       </div>
     </section>
 
@@ -113,8 +138,16 @@
       <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="order-2 lg:order-1">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-6"
+              data-i18n="about_me_title"
+            >
+              About Me
+            </h2>
+            <p
+              class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed"
+              data-i18n="about_me_desc"
+            >
               I am a graduate in <strong>Primary Education</strong> with a
               <strong>Master's degree in Education and Multilingualism</strong>.
               My approach is shaped by a decade of international experience in
@@ -177,9 +210,15 @@
                   Safeguarding
                 </span>
                 <span
-                  class="bg-green-50 text-green-700 px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 border border-green-100"
+                  class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 border border-amber-100"
                 >
-                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Good
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> High
+                  Ability Learners
+                </span>
+                <span
+                  class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 border border-indigo-100"
+                >
+                  <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i> Good
                   Autism Practice
                 </span>
               </div>
