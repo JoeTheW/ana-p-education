@@ -87,6 +87,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Lucide Icons & Copyright Year
   lucide.createIcons();
   const yearSpan = document.getElementById("copyright-line");
-  if (yearSpan)
-    yearSpan.textContent = `© ${new Date().getFullYear()} Ana Prats.`;
+  if (yearSpan) yearSpan.textContent = `© ${new Date().getFullYear()} Ana P.`;
 });
