@@ -4,13 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/01.jpg",
     "assets/images/02.jpg",
     "assets/images/03.jpg",
-    "assets/images/04.jpg",
     "assets/images/05.jpg",
     "assets/images/09.jpg",
     "assets/images/10.jpg",
     "assets/images/11.jpg",
     "assets/images/12.jpg",
-    "assets/images/13.jpg",
   ];
 
   const container = document.getElementById("about-slides-container");
