@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Image Array Configuration
   const aboutImages = [
     "assets/images/01.jpg",
-    "assets/images/02.jpg",
+    "assets/images/16.jpg",
     "assets/images/03.jpg",
     "assets/images/05.jpg",
     "assets/images/06.jpg",
