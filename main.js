@@ -1,4 +1,4 @@
-const translations = {
+﻿const translations = {
   en: {
     hero_title:
       'Inspiring Learning, <span class="text-blue-600">Nurturing Growth</span>',
@@ -88,6 +88,239 @@ document.addEventListener("DOMContentLoaded", () => {
       clickable: true,
     },
   });
+
+  // ---------- Testimonials (data-driven) ----------
+  const testimonials = [
+    {
+      name: "Becky F.",
+      initial: "B",
+      shortQuote:
+        "Professional, reliable, and wonderful with children. Our son looks forward to learning with Ana!",
+      fullQuote:
+        "Professional, reliable, and wonderful with children. Our son looks forward to learning with Ana!",
+    },
+    {
+      name: "Charlotte P.",
+      initial: "C",
+      shortQuote:
+        "An absolute gem! My daughter's confidence and grades have improved tremendously.",
+      fullQuote:
+        "An absolute gem! My daughter's confidence and grades have improved tremendously.",
+    },
+    {
+      name: "Lucia F.",
+      initial: "L",
+      shortQuote:
+        "Patient, creative, and truly invested in their success. Highly recommended.",
+      fullQuote:
+        "Patient, creative, and truly invested in their success. Highly recommended.",
+    },
+    {
+      name: "Carrie",
+      initial: "C",
+      shortQuote:
+        "Ana helped me out for 2 weeks with my 3 young kids. Her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby…",
+      fullQuote:
+        "Ana helped me out for 2 weeks. I was really picky who I worked with because of the young ages (2 toddlers and a baby, all under age 3), but Ana had years of experience that gave me confidence she could handle it. She was great with them and her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby, and when she had art activities and games to keep the kids happy and engaged without screens. Ana also suggested lots of great outings for us that made our stay in San Sebastian extra special.",
+    },
+  ];
+
+  const testimonialsContainer = document.getElementById(
+    "testimonials-container",
+  );
+
+  if (testimonialsContainer) {
+    testimonials.forEach((t) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      const needsExpand = t.shortQuote !== t.fullQuote;
+
+      slide.innerHTML = `
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-blue-100 mb-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              ${t.initial}
+            </div>
+            <div>
+              <p class="font-semibold">${t.name}</p>
+              <p class="text-xs text-gray-500">Parent</p>
+            </div>
+          </div>
+          <div class="testimonial-quote-wrapper ${needsExpand ? '' : 'auto-height'}">
+            <p class="text-gray-700 italic leading-relaxed">"${t.fullQuote}"</p>
+          </div>
+          ${
+            needsExpand
+              ? `<button class="read-more-btn mt-3 text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center gap-1 transition-colors cursor-pointer" aria-label="Read more" data-expanded="false">
+            <span class="icon-open"><i data-lucide="chevron-down" class="w-4 h-4"></i></span>
+            <span class="icon-close hidden"><i data-lucide="chevron-up" class="w-4 h-4"></i></span>
+            <span class="text-open">Read more</span>
+            <span class="text-close hidden">Show less</span>
+          </button>`
+              : ""
+          }
+        </div>
+      `;
+      testimonialsContainer.appendChild(slide);
+    });
+
+    // Expand/collapse CSS using max-height (zero overshoot)
+    const style = document.createElement("style");
+    style.textContent = `
+      .testimonial-quote-wrapper {
+        max-height: 3.75rem;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out;
+      }
+      .testimonial-quote-wrapper > p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .testimonial-quote-wrapper.expanded {
+        max-height: 999rem;
+      }
+      .testimonial-quote-wrapper.expanded > p {
+        -webkit-line-clamp: unset;
+      }
+      .testimonial-quote-wrapper.auto-height {
+        max-height: none;
+      }
+      .testimonial-quote-wrapper.auto-height > p {
+        -webkit-line-clamp: unset;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Pagination & navigation overrides for external layout
+    const navStyle = document.createElement("style");
+    navStyle.textContent = `
+      /* Pagination dots */
+      .swiper-pagination {
+        display: flex !important;
+        justify-content: center;
+        padding-top: 14px;
+      }
+      .swiper-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: #94a3b8;
+        opacity: 0.45;
+        margin: 0 5px !important;
+        transition: opacity 0.2s, background 0.2s, transform 0.2s;
+      }
+      .swiper-pagination .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: #2563eb;
+        transform: scale(1.15);
+      }
+      /* Hide default swiper arrows since we use our own */
+      .swiper-button-prev, .swiper-button-next,
+      .swiper-container-pointer-down .swiper-button-prev,
+      .swiper-container-pointer-down .swiper-button-next {
+        display: none !important;
+      }
+    `;
+    document.head.appendChild(navStyle);
+
+    // Testimonials Swiper — infinite scroll with sticky snapping
+    const testimonialsSwiperEl = document.querySelector(".testimonialsSwiper");
+    let swiperInstance = null;
+
+    if (testimonialsSwiperEl) {
+      swiperInstance = new Swiper(testimonialsSwiperEl, {
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          pauseOnTouchEnd: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".testi-next, .testi-next-mobile",
+          prevEl: ".testi-prev, .testi-prev-mobile",
+        },
+        spaceBetween: 24,
+        breakpoints: {
+          0:  { slidesPerView: 1 },
+          768:{ slidesPerView: 2 },
+          1024:{ slidesPerView: 3 },
+        },
+        on: {
+          slideChangeTransitionEnd: function () {
+            // Auto-collapse any open cards — reads/writes only DOM, zero JS closures
+            document.querySelectorAll('.read-more-btn[data-expanded="true"]').forEach((btn) => {
+              btn.dataset.expanded = "false";
+              btn.classList.remove("open");
+              const wrapper = btn.parentElement.querySelector(
+                ".testimonial-quote-wrapper",
+              );
+              if (wrapper) wrapper.classList.remove("expanded");
+              btn.querySelector(".icon-open")?.classList.remove("hidden");
+              btn.querySelector(".icon-close")?.classList.add("hidden");
+              btn.querySelector(".text-open")?.classList.remove("hidden");
+              btn.querySelector(".text-close")?.classList.add("hidden");
+            });
+          },
+        },
+      });
+    }
+
+    // Click handler — state lives entirely in data attributes + classes on the DOM
+    document.querySelectorAll(".read-more-btn").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const wrapper = this.parentElement.querySelector(
+          ".testimonial-quote-wrapper",
+        );
+        const isExpanded = this.dataset.expanded === "true";
+
+        if (isExpanded) {
+          // Collapse → resume autoplay
+          wrapper.classList.remove("expanded");
+          this.dataset.expanded = "false";
+          this.classList.remove("open");
+          this.querySelector(".icon-open").classList.remove("hidden");
+          this.querySelector(".icon-close").classList.add("hidden");
+          this.querySelector(".text-open").classList.remove("hidden");
+          this.querySelector(".text-close").classList.add("hidden");
+          swiperInstance?.autoplay.start();
+        } else {
+          // Pause autoplay while this card is expanded
+          swiperInstance?.autoplay.stop();
+          // Close any other expanded card first
+          document.querySelectorAll('.read-more-btn[data-expanded="true"]').forEach((otherBtn) => {
+            otherBtn.dataset.expanded = "false";
+            otherBtn.classList.remove("open");
+            const otherWrapper = otherBtn.parentElement.querySelector(
+              ".testimonial-quote-wrapper",
+            );
+            if (otherWrapper) otherWrapper.classList.remove("expanded");
+            otherBtn.querySelector(".icon-open")?.classList.remove("hidden");
+            otherBtn.querySelector(".icon-close")?.classList.add("hidden");
+            otherBtn.querySelector(".text-open")?.classList.remove("hidden");
+            otherBtn.querySelector(".text-close")?.classList.add("hidden");
+          });
+          // Open this one
+          wrapper.classList.add("expanded");
+          this.dataset.expanded = "true";
+          this.classList.add("open");
+          this.querySelector(".icon-open").classList.add("hidden");
+          this.querySelector(".icon-close").classList.remove("hidden");
+          this.querySelector(".text-open").classList.add("hidden");
+          this.querySelector(".text-close").classList.remove("hidden");
+        }
+      });
+    });
+  }
+
+  lucide.createIcons();
 
   // Secure Contact Info Injection (Anti-Scraper)
   const user = "placeholder.user";
