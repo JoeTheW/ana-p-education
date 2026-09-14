@@ -200,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .swiper-pagination {
         display: flex !important;
         justify-content: center;
+        position: relative !important;
+        bottom: auto !important;
         padding-top: 14px;
       }
       .swiper-pagination .swiper-pagination-bullet {
