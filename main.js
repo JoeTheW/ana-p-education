@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="text-xs text-gray-500">Parent</p>
             </div>
           </div>
-          <div class="testimonial-quote-wrapper ${needsExpand ? '' : 'auto-height'}">
+          <div class="testimonial-quote-wrapper ${needsExpand ? "" : "auto-height"}">
             <p class="text-gray-700 italic leading-relaxed">"${t.fullQuote}"</p>
           </div>
           ${
@@ -258,25 +258,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         spaceBetween: 24,
         breakpoints: {
-          0:  { slidesPerView: 1 },
-          768:{ slidesPerView: 2 },
-          1024:{ slidesPerView: 3 },
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
         },
         on: {
           slideChangeTransitionEnd: function () {
             // Auto-collapse any open cards — reads/writes only DOM, zero JS closures
-            document.querySelectorAll('.read-more-btn[data-expanded="true"]').forEach((btn) => {
-              btn.dataset.expanded = "false";
-              btn.classList.remove("open");
-              const wrapper = btn.parentElement.querySelector(
-                ".testimonial-quote-wrapper",
-              );
-              if (wrapper) wrapper.classList.remove("expanded");
-              btn.querySelector(".icon-open")?.classList.remove("hidden");
-              btn.querySelector(".icon-close")?.classList.add("hidden");
-              btn.querySelector(".text-open")?.classList.remove("hidden");
-              btn.querySelector(".text-close")?.classList.add("hidden");
-            });
+            document
+              .querySelectorAll('.read-more-btn[data-expanded="true"]')
+              .forEach((btn) => {
+                btn.dataset.expanded = "false";
+                btn.classList.remove("open");
+                const wrapper = btn.parentElement.querySelector(
+                  ".testimonial-quote-wrapper",
+                );
+                if (wrapper) wrapper.classList.remove("expanded");
+                btn.querySelector(".icon-open")?.classList.remove("hidden");
+                btn.querySelector(".icon-close")?.classList.add("hidden");
+                btn.querySelector(".text-open")?.classList.remove("hidden");
+                btn.querySelector(".text-close")?.classList.add("hidden");
+              });
           },
         },
       });
@@ -305,18 +307,20 @@ document.addEventListener("DOMContentLoaded", () => {
           // Pause autoplay while this card is expanded
           swiperInstance?.autoplay.stop();
           // Close any other expanded card first
-          document.querySelectorAll('.read-more-btn[data-expanded="true"]').forEach((otherBtn) => {
-            otherBtn.dataset.expanded = "false";
-            otherBtn.classList.remove("open");
-            const otherWrapper = otherBtn.parentElement.querySelector(
-              ".testimonial-quote-wrapper",
-            );
-            if (otherWrapper) otherWrapper.classList.remove("expanded");
-            otherBtn.querySelector(".icon-open")?.classList.remove("hidden");
-            otherBtn.querySelector(".icon-close")?.classList.add("hidden");
-            otherBtn.querySelector(".text-open")?.classList.remove("hidden");
-            otherBtn.querySelector(".text-close")?.classList.add("hidden");
-          });
+          document
+            .querySelectorAll('.read-more-btn[data-expanded="true"]')
+            .forEach((otherBtn) => {
+              otherBtn.dataset.expanded = "false";
+              otherBtn.classList.remove("open");
+              const otherWrapper = otherBtn.parentElement.querySelector(
+                ".testimonial-quote-wrapper",
+              );
+              if (otherWrapper) otherWrapper.classList.remove("expanded");
+              otherBtn.querySelector(".icon-open")?.classList.remove("hidden");
+              otherBtn.querySelector(".icon-close")?.classList.add("hidden");
+              otherBtn.querySelector(".text-open")?.classList.remove("hidden");
+              otherBtn.querySelector(".text-close")?.classList.add("hidden");
+            });
           // Open this one
           wrapper.classList.add("expanded");
           this.dataset.expanded = "true";
