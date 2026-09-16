@@ -119,9 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Carrie",
       initial: "C",
       shortQuote:
-        "Ana helped me out for 2 weeks with my 3 young kids. Her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby…",
+        "Ana helped me out for 2 weeks with my 3 young kids. Her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby...",
       fullQuote:
         "Ana helped me out for 2 weeks. I was really picky who I worked with because of the young ages (2 toddlers and a baby, all under age 3), but Ana had years of experience that gave me confidence she could handle it. She was great with them and her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby, and when she had art activities and games to keep the kids happy and engaged without screens. Ana also suggested lots of great outings for us that made our stay in San Sebastian extra special.",
+    },
+    {
+      name: "Rachel",
+      initial: "R",
+      shortQuote:
+        "We had a wonderful experience with Ana while visiting San Sebastián. She was warm, reliable, and immediately made our girls feel comfortable and at ease. As parents traveling...",
+      fullQuote:
+        "We had a wonderful experience with Ana while visiting San Sebastián. She was warm, reliable, and immediately made our girls feel comfortable and at ease. As parents traveling in another country, it gave us so much peace of mind knowing they were happy and well cared for. We would absolutely recommend Ana to other families visiting San Sebastián!",
     },
   ];
 
