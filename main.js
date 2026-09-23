@@ -50,15 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Image Array Configuration
   const aboutImages = [
-    "assets/images/01.jpg",
     "assets/images/16.jpg",
     "assets/images/03.jpg",
     "assets/images/05.jpg",
     "assets/images/06.jpg",
     "assets/images/09.jpg",
     "assets/images/10.jpg",
+    "assets/images/19.jpg",
     "assets/images/11.jpg",
     "assets/images/12.jpg",
+    "assets/images/18.jpg",
+    "assets/images/21.jpg",
   ];
 
   const container = document.getElementById("about-slides-container");
