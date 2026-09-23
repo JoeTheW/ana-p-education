@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joethew.github.io/ana-p-education/sitemap.xml
