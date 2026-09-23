@@ -92,20 +92,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- Testimonials (data-driven) ----------
   const testimonials = [
     {
-      name: "Carrie",
-      initial: "C",
-      shortQuote:
-        "Ana helped me out for 2 weeks with my 3 young kids. Her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby...",
-      fullQuote:
-        "Ana helped me out for 2 weeks. I was really picky who I worked with because of the young ages (2 toddlers and a baby, all under age 3), but Ana had years of experience that gave me confidence she could handle it. She was great with them and her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby, and when she had art activities and games to keep the kids happy and engaged without screens. Ana also suggested lots of great outings for us that made our stay in San Sebastian extra special.",
-    },
-    {
       name: "Rachel",
       initial: "R",
       shortQuote:
         "We had a wonderful experience with Ana while visiting San Sebastián. She was warm, reliable, and immediately made our girls feel comfortable and at ease. As parents traveling...",
       fullQuote:
         "We had a wonderful experience with Ana while visiting San Sebastián. She was warm, reliable, and immediately made our girls feel comfortable and at ease. As parents traveling in another country, it gave us so much peace of mind knowing they were happy and well cared for. We would absolutely recommend Ana to other families visiting San Sebastián!",
+    },
+    {
+      name: "Charlie and Sarah",
+      initial: "C&S",
+      shortQuote:
+        "We spent the summer in San Sebastián with our 3 year old and our 4 month old, and our trip wouldn't have been the same without Ana. Ana is the most amazing nanny we have ever worked with...",
+      fullQuote:
+        "We spent the summer in San Sebastián with our 3 year old and our 4 month old, and our trip wouldn't have been the same without Ana. Ana is the most amazing nanny we have ever worked with. It felt like our daughter got a nursery school teacher all to herself. Ana would come in for the day with a detailed plan of adventures for them to do, and she would often have art projects that she created for her from scratch. She 3D printed a puzzle that spelled her name, and she created a personalized coloring and scrap book that they took with them everywhere on their adventures. Ana sometimes watched the baby as well and managed both kids easily. She went far beyond the call of duty, and helped our toddler manage a big transition and thrive during our time there. She became a part of our family, and is one of the parts of San Sebastián I miss most now that we're back. Anyone would be lucky to work with her.",
+    },
+    {
+      name: "Carrie",
+      initial: "C",
+      shortQuote:
+        "Ana helped me out for 2 weeks with my 3 young kids. Her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby...",
+      fullQuote:
+        "Ana helped me out for 2 weeks. I was really picky who I worked with because of the young ages (2 toddlers and a baby, all under age 3), but Ana had years of experience that gave me confidence she could handle it. She was great with them and her experience really showed; she was so patient with my toddlers through all their tantrums, very nurturing with the baby, and when she had art activities and games to keep the kids happy and engaged without screens. Ana also suggested lots of great outings for us that made our stay in San Sebastian extra special.",
     },
     {
       name: "Becky F.",
